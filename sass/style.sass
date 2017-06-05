@@ -1,0 +1,342 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,200,400,300,300italic,400italic,600,600italic,700,700italic,900)
+@import clearfix
+@import grid
+
+$background-color: #313332
+$font-special-color: #FFF
+$footer-bg-color: #252726
+
+=font-hover()
+	color: #6797e5
+	cursor: pointer
+
+* 
+	box-sizing: border-box
+
+body 
+	margin: 0
+	font-family: "Open Sans", sans-serif
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+	.row
+		font-size: 0
+
+header
+	background-color: $background-color
+	height: auto
+	nav
+		img
+			padding: 10px 0
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			float: right
+			li
+				display: inline-block 
+				a
+					color: white
+					text-decoration: none
+					line-height: 50px 
+					padding: 0 20px 
+					text-transform: uppercase
+					display: block
+					text-align: center
+					font-size: 16px
+					&:hover
+						+font-hover()
+
+header
+	input[type="checkbox"] 
+		+ label
+			font-size: 25px
+			cursor: pointer
+			color: $font-special-color
+
+
+header
+	input,
+	label
+		display: none
+
+
+.hero
+	height: 500px
+	background: url(https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?dpr=1&auto=compress,format&fit=crop&w=376&h=250&q=80&cs=tinysrgb&crop=) center/cover
+	position: relative
+	.slogan
+		background-color: rgba(49, 51, 50, 0.8)
+		color: $font-special-color
+		text-transform: uppercase
+		position: absolute
+		top: 20%
+		right: 0
+		padding: 30px
+
+.benefits
+	[class*="col-"]
+		float: left
+		padding: 20px
+		text-align: center
+
+
+.benefits
+	margin: 50px 50px
+	div
+		div
+			div
+				&:hover
+					i
+						+font-hover()
+					h2
+						+font-hover()
+				.fa
+					font-size: 50px
+					border-radius: 10px
+					padding: 15px
+					background-color: $background-color
+					color: $font-special-color
+				h2
+					text-transform: uppercase
+					font-size: 20px
+					margin: 10px 50px
+				p
+					font-size: 16px
+					margin: 10px 50px
+
+.featured
+	text-align: center
+	margin: auto 100px
+	h2
+		margin-top: 50px
+		text-align: center
+		font-weight: 900
+		font-size: 30px
+	p
+		font-size: 20px
+
+.gallery 
+	[class*="col-"]
+		float: left
+		text-align: center
+		position: relative
+
+.gallery
+	.layer
+		position: absolute 
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(0, 0, 0, 0)
+		color: $font-special-color
+		transition: background 800ms
+		text-align: center
+		&:hover
+			background: rgba(0, 0, 0, .5)
+			.fa
+				opacity: 1
+				cursor: pointer
+		.fa
+			font-size: 30px
+			margin-right: 25px
+			position: relative
+			top: 50%
+			transform: translateY(-50%)
+			opacity: 0
+			transition: opacity 800ms
+			&:last-child
+				margin-right: 0
+	img
+		width: 100%
+		height: 350px
+	
+
+.team
+	[class*="col-"]
+		float: left
+		text-align: center
+		min-width: 200px
+		margin: 20px 0
+ 
+.team-member
+	width: 100%
+	img
+		border-radius: 50%
+		width: 200px
+		height: 200px
+		margin: 0 auto
+	h3
+		font-size: 20px
+		text-align: center
+
+.photo
+	background: $background-color
+	margin-bottom: 20px
+	height: auto
+	img
+		width: 100%
+		height: 400px
+	h2
+		text-transform: uppercase
+		font-size: 50px
+		margin-bottom: 5px
+		text-align: center
+		color: $font-special-color
+	p
+		font-size: 16px
+		margin: 20px
+		color: $font-special-color
+
+.photo [class*="col-"]
+	float: left
+	text-align: center
+
+.numbers
+	padding: 0 100px
+	margin-bottom: 20px
+	[class*="col-"]
+		float: left
+		text-align: center
+		h1
+			font-size: 45px
+			margin-bottom: 0
+			font-weight: 900
+		p
+			font-size: 20px
+			text-transform: uppercase
+			color: #6797e5
+			font-weight: bold
+			margin-top: 0
+
+.footer
+	width: 100%
+	background: #313332
+	color: $font-special-color
+	padding: 10px
+	[class*="col-"]
+		float: left
+		text-align: center
+		h2
+			font-size: 30px
+			text-transform: uppercase
+		p
+			font-size: 16px
+			padding: 5px
+			margin: 0
+
+.col-5
+	> p:first-child
+		font-weight: bold
+		text-align: right
+
+
+.col-7
+	> p:first-child
+		text-align: justify
+
+.social-button
+	text-align: center
+	padding: 5px
+	.icon-btn
+		width: 45px
+		height: 45px
+		border-radius: 10%
+		border: none
+		background-color: #6797e5
+		font-size: 25px
+		line-height: 45px
+		margin: 15px
+		transition: 500ms
+		display: inline-block
+		&:hover
+			transform: scale(1.2)
+			cursor: pointer
+		.fa
+			color: $font-special-color
+
+.copyrights
+	text-align: center
+	font-size: 16px
+	background-color: $footer-bg-color
+	color: $font-special-color
+	padding: 5px
+
+
+// RWD
+// tablet
+@media(max-width: 1200px)
+	.featured
+		margin: 0 auto
+	
+	
+	.gallery
+		.layer
+			background: rgba(0, 0, 0, .5)
+			.fa
+				opacity: 1
+	
+	
+	.team-member
+		margin: 25px 0
+	
+	
+	footer
+		.touch
+			p
+				&:first-child
+					text-align: center
+	
+	header
+		nav
+			ul
+				li
+					a
+						&:hover
+							color: $font-special-color
+	
+	.benefits
+		div
+			div
+				div
+					&:hover
+						i
+							color: $font-special-color
+						h2
+							color: inherit
+			
+	footer
+		.icon-btn
+			&:hover
+				transform: scale(1)
+
+// phone
+@media(max-width: 767px)
+	header
+		label
+			display: block
+			float: right
+			padding: 10px 5px
+		
+	
+	#menu-button:not(:checked)
+		~ ul
+			display: none
+		
+		
+	#menu-button:checked
+		~ ul
+			float: none
+			li
+				display: block
+		
+	.slogan
+		padding: 15px
+		text-align: right
+	
+	.benefits
+		p,
+		h2
+			margin: 10px 0
